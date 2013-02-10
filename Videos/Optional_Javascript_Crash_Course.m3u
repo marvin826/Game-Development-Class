@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,cs255 - 01-Introduction
+Optional_Javascript_Crash_Course/01-Introduction.flv
+#EXTINF:-1,cs255 - 02-Javascript_Syntax
+Optional_Javascript_Crash_Course/02-Javascript_Syntax.flv
+#EXTINF:-1,cs255 - 03-JSON
+Optional_Javascript_Crash_Course/03-JSON.flv
+#EXTINF:-1,cs255 - 04-XMLHttpRequests
+Optional_Javascript_Crash_Course/04-XMLHttpRequests.flv
+#EXTINF:-1,cs255 - 05-The_DOM
+Optional_Javascript_Crash_Course/05-The_DOM.flv
+#EXTINF:-1,cs255 - 06-Javascript_and_Inheritance
+Optional_Javascript_Crash_Course/06-Javascript_and_Inheritance.flv
+#EXTINF:-1,cs255 - 07-Outro
+Optional_Javascript_Crash_Course/07-Outro.flv

@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Image Object</title>
+</head>
+<body>
+    <canvas id='my_canvas'></canvas>
+</body>
+
+<script>
+    // declare a new image object
+    // declare the 'onload' method -- NOTE: as soon
+    // as the image src is set, JavaScript will try
+    // to load the image, so the onload callback must
+    // be set
+    // set image src
+    // 
+    // HINT: Check out webplatform.org for HTML5 questions
+    
+    var canvas = null;
+    var context = null;
+    var image = null;
+
+    setup = function() {
+        canvas = document.getElementById('my_canvas');
+        context = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        image = new Image();
+        image.addEventListener('load',onImageLoad,false);
+        image.src = 'marvin.png';
+    };
+
+    // gets called when the image has been loaded
+    onImageLoad = function() {
+        console.log("Loaded!");
+        drawScreen();
+    };
+
+    // actually draws the image when it is loaded
+    drawScreen = function(){
+        context.drawImage(image,0,0);
+    }
+
+    setup();
+
+</script>
+</html>

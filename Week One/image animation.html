@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Image Animation</title>
+</head>
+<body>
+</body>
+
+<script>
+    // declare a new image object
+    // declare the 'onload' method -- NOTE: as soon
+    // as the image src is set, JavaScript will try
+    // to load the image, so the onload callback must
+    // be set
+    // set image src
+    // 
+    // HINT: Check out webplatform.org for HTML5 questions
+    
+    var canvas = null;
+    var context = null;
+    var loadCount = 0;
+    var imgIndex = 0;
+
+    var assets = [ 'Graphics/soccer01.png',
+                   'Graphics/soccer02.png',
+                   'Graphics/soccer03.png',
+                   'Graphics/soccer04.png',
+                   'Graphics/soccer05.png',
+                   'Graphics/soccer06.png',
+                   'Graphics/soccer07.png',
+                   'Graphics/soccer08.png',
+                   'Graphics/soccer09.png',
+                   'Graphics/soccer10.png' ];
+    var frames = [];
+
+    setup = function() {
+        canvas = document.createElement('canvas');
+        context = canvas.getContext('2d');
+
+        canvas.width = 260;
+        canvas.height = 130;
+        document.body.appendChild(canvas);
+
+        for (var i = 0; i < assets.length; i++) {
+            img = new Image();
+            frames[i] = img;
+            img.addEventListener('load',onImageLoad,false);
+            img.src = assets[i];
+        };
+    };
+
+    // gets called when the image has been loaded
+    onImageLoad = function() {
+        console.log("loadCount: " + loadCount);
+        loadCount++;
+        if(loadCount == assets.length){
+            imgIndex = 0;
+            setInterval(animate,133.33);
+        }
+    };
+
+    // actually draws the image when it is loaded
+    animate = function(){     
+        context.clearRect(0+(imgIndex*1),0,130,260);
+        if(imgIndex < frames.length)
+            context.drawImage(frames[imgIndex],0+(imgIndex*1),0);
+        imgIndex = (imgIndex + 1) % (frames.length + 1);
+    }
+
+    setup();
+
+</script>
+</html>

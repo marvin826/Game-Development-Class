@@ -1,0 +1,661 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"xbint",
+				"xbint"
+			],
+			[
+				"xb",
+				"xbint"
+			],
+			[
+				"smpl",
+				"sample"
+			],
+			[
+				"sample",
+				"sample"
+			],
+			[
+				"xbd",
+				"XBeeDataType"
+			],
+			[
+				"raw",
+				"rawBytes"
+			],
+			[
+				"desc",
+				"descriptors"
+			],
+			[
+				"_m",
+				"_mXBeeDataTypes"
+			],
+			[
+				"_",
+				"_mFrameDB"
+			],
+			[
+				"enum",
+				"enumLength"
+			],
+			[
+				"api",
+				"apiFrameEscapeMask"
+			],
+			[
+				"x",
+				"xbc"
+			],
+			[
+				"ap",
+				"apiFrameType"
+			],
+			[
+				"getTimeSt",
+				"getTimeStampStr"
+			],
+			[
+				"timeS",
+				"timeStamp"
+			],
+			[
+				"xbp",
+				"XBeePacket"
+			],
+			[
+				"XBe",
+				"XbeePacket"
+			],
+			[
+				"curre",
+				"_mCurrentPacket"
+			],
+			[
+				"ext",
+				"extra_bytes"
+			],
+			[
+				"is",
+				"isErrorFreePacket"
+			],
+			[
+				"cal",
+				"calculatedChecksum"
+			],
+			[
+				"r_y",
+				"raw_byte"
+			],
+			[
+				"bytes",
+				"bytesToStr"
+			],
+			[
+				"length",
+				"length"
+			],
+			[
+				"ra",
+				"rawBytes"
+			],
+			[
+				"tot",
+				"totalPacketLength"
+			],
+			[
+				"fram",
+				"frameDataLength"
+			],
+			[
+				"b",
+				"b_buffer"
+			],
+			[
+				"sig",
+				"sig_handler"
+			],
+			[
+				"s",
+				"se"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "dom_manipulation.html",
+			"settings":
+			{
+				"buffer_size": 555,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "javascript inheritence.js",
+			"settings":
+			{
+				"buffer_size": 386,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<html>\n<head>\n    <title>Canvas</title>\n</head>\n<body>\n    <canvas id=\"my_canvas\"></canvas>\n</body>\n\n<script>\n    var canvas = null;\n\n    setup = function() {\n        canvas = document.getElementById('my_canvas');\n        context = canvas.getContext('2d');\n        canvas.width = 1200;\n        canvas.height = 720;\n    };\n\nsetup();\n\n</script>\n</html>",
+			"file": "canvas_context.html",
+			"file_size": 327,
+			"file_write_time": 130046809577998628,
+			"settings":
+			{
+				"buffer_size": 350,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "image object.html",
+			"settings":
+			{
+				"buffer_size": 1122,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "image animation.html",
+			"settings":
+			{
+				"buffer_size": 1909,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"spli",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Enable Package"
+			],
+			[
+				"file",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"snipp",
+				"Snippet: New Class"
+			],
+			[
+				"git",
+				"Package Control: Install Package"
+			],
+			[
+				"auto",
+				"Preferences: AutoPep8 Settings – Default"
+			],
+			[
+				"pep",
+				"Preferences: AutoPep8 Settings – Default"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"snip",
+				"Snippet: html"
+			],
+			[
+				"snippet",
+				"Snippet: New Property"
+			],
+			[
+				"Snippet: ",
+				"Snippet: New Class"
+			],
+			[
+				"build ",
+				"Build: Cancel"
+			],
+			[
+				"togg",
+				"Toggle Comment"
+			],
+			[
+				"toggle",
+				"Toggle Comment"
+			],
+			[
+				"sideb",
+				"View: Toggle Side Bar"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax mar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"syntax java",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/J/Users/Todd/Projects/ZigBee/XBeeFramework.sublime-project",
+		"/C/Users/Todd/read_temperatures.py",
+		"/J/Users/Todd/Projects/HTML5/Modernizr.html",
+		"/J/Users/Todd/Projects/Greasemonkey/9news Contact Fix.js",
+		"/C/Users/Todd/AppData/Roaming/Mozilla/Firefox/Profiles/urpoot1k.default/gm_scripts/user-script/user-script.user.js",
+		"/J/Users/Todd/Projects/Programming Python/lists.py",
+		"/J/Users/Todd/Projects/Programming Python/debugging.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/test/XBeeIntTest.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/xbee_exceptions.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeeFrameDatabase.py",
+		"/J/Users/Todd/Projects/ZigBee/Temperature Sensor/read_temperatures_0.1.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/read_serial.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeePacketHandler.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeeFrameDescriptor.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeePacket.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeeBitField.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/xbee_constants.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeeReader.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/test_database.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/data/XBee_API_Frame_Database.db",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/test_json.py",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/AdvancedNewFile/README.md",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/data/testnewfile.txt",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/J/Users/Todd/Projects/ZigBee/test.html",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/exit_handler.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XBeeConnection.py",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/XbeePacket.py",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/User/AutoPep8.sublime-settings",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/AutoPep8/AutoPep8.sublime-settings",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/J/Users/Todd/Projects/ZigBee/XBee Framework/src/test.html",
+		"/J/Users/Todd/Projects/Python Astro Algorithms/time/src/julian_date.py",
+		"/J/Users/Todd/Projects/Python Astro Algorithms/time/src/sidereal_time.py",
+		"/J/Users/Todd/Projects/Python Astro Algorithms/time/src/time_constants.py",
+		"/J/Users/Todd/Projects/Python Astro Algorithms/time/src/time_exceptions.py",
+		"/J/Users/Todd/Projects/ZigBee/Temperature Sensor/tweet_temp.py",
+		"/C/Users/Todd/test.js",
+		"/J/Users/Todd/Projects/ZigBee/Garage Sensor/End Node Configuration v1.pro",
+		"/C/Users/Todd/AppData/Roaming/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/J/Users/Todd/Projects/Scipy Numpy/index_and_slice.py",
+		"/J/Users/Todd/Projects/Scipy Numpy/numpy_record_arrays.py",
+		"/J/Users/Todd/Projects/Scipy Numpy/numpy_arrays.py",
+		"/J/Users/Todd/Projects/Gradle/.gitignore",
+		"/J/Users/Todd/Projects/Gradle/tutorial/build.gradle",
+		"/J/Users/Todd/Projects/Gradle/tutorial/dolast.gradle",
+		"/J/Users/Todd/Projects/Gradle/tutorial/dolast.out",
+		"/J/Users/Todd/Projects/ZigBee/zigbee frame sample.txt"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Image",
+			"image",
+			"Weapon",
+			"ChainGun",
+			"Weapon",
+			"ChainGun",
+			"],",
+			"rawTemps",
+			"_mSampleOrder",
+			"rBytes",
+			"value",
+			"XBeeInt",
+			"key",
+			"\\t",
+			"\"type\"",
+			"timeStamp",
+			"apiFrameType",
+			"totalPacketLength",
+			"isErrorFreePacket",
+			"isWholePacket",
+			"raise",
+			"calculatedChecksum",
+			"packetChecksum",
+			"0",
+			"frameDataLength",
+			"withEscapeChars",
+			"processedBytes",
+			"rawBytes",
+			"\\",
+			"localTime\\.",
+			"localTime",
+			"localTime.",
+			": ",
+			"\\n",
+			": ",
+			" +",
+			"+ \\",
+			"0x20",
+			"0x7d",
+			"'\\x7e'",
+			"x7e",
+			"_m",
+			"XbeePacket",
+			"ser",
+			"currentPacket",
+			"IsValidPacket",
+			"isValidPacket",
+			"nisValidPacket",
+			"isErrorFreePacket",
+			"isValidPacket",
+			"isErrorFreePacket",
+			"x7e",
+			"nisWholePacket",
+			"bytes",
+			"cal_m",
+			"cal_y",
+			"play",
+			"here",
+			"here is some morehere is some morehere is some more\nhere is some morehere is some morehere is some more",
+			"morehere",
+			"here",
+			"dfdsds",
+			"good",
+			"the name",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dom_manipulation.html",
+					"settings":
+					{
+						"buffer_size": 555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								473,
+								473
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "javascript inheritence.js",
+					"settings":
+					{
+						"buffer_size": 386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "canvas_context.html",
+					"settings":
+					{
+						"buffer_size": 350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "image object.html",
+					"settings":
+					{
+						"buffer_size": 1122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "image animation.html",
+					"settings":
+					{
+						"buffer_size": 1909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1634,
+								1634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 198.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 227.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"xbeepa",
+				"XBee Framework/src/XBeePacket.py"
+			],
+			[
+				"garagepro",
+				"Garage Sensor/End Node Configuration v1.pro"
+			],
+			[
+				"toddprojectssid",
+				"/J/Users/Todd/Projects/Python Astro Algorithms/time/src/sidereal_time.py"
+			],
+			[
+				"zigbee",
+				"zigbee frame sample.txt"
+			],
+			[
+				"basemap_",
+				"basemap_example.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/J/Users/Todd/Projects/Programming Python/oo_python/oo_python.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": true
+}
