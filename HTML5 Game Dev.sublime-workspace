@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getStats"
+			],
+			[
 				"xbint",
 				"xbint"
 			],
@@ -128,45 +132,37 @@
 	"buffers":
 	[
 		{
-			"file": "dom_manipulation.html",
+			"file": "Week Two/core.js",
 			"settings":
 			{
-				"buffer_size": 555,
+				"buffer_size": 5336,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "javascript inheritence.js",
+			"file": "Week Two/grits_effects.json",
 			"settings":
 			{
-				"buffer_size": 386,
+				"buffer_size": 988,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<html>\n<head>\n    <title>Canvas</title>\n</head>\n<body>\n    <canvas id=\"my_canvas\"></canvas>\n</body>\n\n<script>\n    var canvas = null;\n\n    setup = function() {\n        canvas = document.getElementById('my_canvas');\n        context = canvas.getContext('2d');\n        canvas.width = 1200;\n        canvas.height = 720;\n    };\n\nsetup();\n\n</script>\n</html>",
-			"file": "canvas_context.html",
-			"file_size": 327,
-			"file_write_time": 130046809577998628,
+			"file": "spritesheet3.js",
 			"settings":
 			{
-				"buffer_size": 350,
+				"buffer_size": 8771,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "image object.html",
+			"contents": "\n// We keep a global dictionary of loaded sprite-sheets,\n// which are each an instance of our SpriteSheetClass\n// below.\n//\n// This dictionary is indexed by the URL path that the\n// atlas is located at. For example, calling:\n//\n// gSpriteSheets['grits_effects.png'] \n//\n// would return the SpriteSheetClass object associated\n// to that URL, assuming that it exists.\nvar gSpriteSheets = {};\n\n//-----------------------------------------\nSpriteSheetClass = Class.extend({\n\n    // We store in the SpriteSheetClass:\n    //\n    // The Image object that we created for our\n    // atlas.\n    img: null,\n\n    // The URL path that we grabbed our atlas\n    // from.\n    url: \"\",\n\n    // An array of all the sprites in our atlas.\n    sprites: [],\n\n    //-----------------------------------------\n    init: function () {},\n\n    //-----------------------------------------\n    // Load the atlas at the path 'imgName' into\n    // memory. This is similar to how we've\n    // loaded images in previous units.\n    load: function (imgName) {\n        // Store the URL of the spritesheet we want.\n        this.url = imgName;\n        \n        // Create a new image whose source is at 'imgName'.\n        var img = new Image();\n        img.src = imgName;\n\n        // Store the Image object in the img parameter.\n        this.img = img;\n\n        // Store this SpriteSheetClass in our global\n        // dictionary gSpriteSheets defined above.\n        gSpriteSheets[imgName] = this;\n    },\n\n    //-----------------------------------------\n    // Define a sprite for this atlas\n    defSprite: function (name, x, y, w, h, cx, cy) {\n        // We create a new object with:\n        //\n        // The name of the sprite as a string\n        //\n        // The x and y coordinates of the sprite\n        // in the atlas.\n        //\n        // The width and height of the sprite in\n        // the atlas.\n        //\n        // The x and y coordinates of the center\n        // of the sprite in the atlas. This is\n        // so we don't have to do the calculations\n        // each time we need this. This might seem\n        // minimal, but it adds up!\n        var spt = {\n            \"id\": name,\n            \"x\": x,\n            \"y\": y,\n            \"w\": w,\n            \"h\": h,\n            \"cx\": cx === null ? 0 : cx,\n            \"cy\": cy === null ? 0 : cy\n        };\n\n        // We push this new object into\n        // our array of sprite objects,\n        // at the end of the array.\n        this.sprites.push(spt);\n    },\n\n    //-----------------------------------------\n    // Parse the JSON file passed in as 'atlasJSON'\n    // that is associated to this atlas.\n    parseAtlasDefinition: function (atlasJSON) {\n        // Parse the input 'atlasJSON' using the\n        // JSON.parse method and store it in a\n        // variable.\n\n        var parsed = JSON.parse(atlasJSON);\n\n        // For each sprite in the parsed JSON,\n        // 'chaingun.png', chaingun_impact.png',\n        // etc....\n        for(var key in parsed.frames) {\n            // Grab the sprite from the parsed JSON...\n            var sprite = parsed.frames[key];\n\n            // Define the center of the sprite as an offset\n            // (hence the negative).\n            // We don't want to have to calculate these\n            // values every single time we want to draw a\n            // sprite! It adds up!\n            var cx = -sprite.frame.w * 0.5;\n            var cy = -sprite.frame.h * 0.5;\n\n            // Define the sprite for this sheet by calling\n            // defSprite to store it into the 'sprites' Array.\n            this.defSprite(key, sprite.frame.x, sprite.frame.y, sprite.frame.w, sprite.frame.h, cx, cy);\n        }\n    },\n\n    //-----------------------------------------\n    // Walk through all the sprite definitions for this\n    // atlas, and find which one matches the name.\n    getStats: function (name) {\n        // For each sprite in the 'sprites' Array...\n        for(var i = 0; i < this.sprites.length; i++) {\n            \n            // Check if the sprite's 'id' parameter\n            // equals the passed in name...\n            if(this.sprites[i].id === name) {\n                // and return that sprite if it does.\n                return this.sprites[i];\n            }\n\n        }\n\n        // If we don't find the sprite, return null.\n        return null;\n    }\n\n});\n\n//-----------------------------------------\n// External-facing function for drawing sprites based\n// on the sprite name (ie. \"chaingun.png\", and the\n// position on the canvas to draw to.\nfunction drawSprite(spritename, posX, posY) {\n    // Walk through all our spritesheets defined in\n    // 'gSpriteSheets' and for each sheet:\n    //\n    // 1) Use the getStats method of the spritesheet\n    //    to find if a sprite with name 'spritename'\n    //    exists in that sheet.\n    //\n    // 2) If we find the appropriate sprite, call\n    //    '__drawSpriteInternal' with parameters as\n    //    described below.\n    //\n    // YOUR CODE HERE\n    var sheet;\n    for(sheet in gSpriteSheets){\n        var spt = gSpriteSheets[sheet].getStats(spritename);\n        if(spt){\n            return __drawSpriteInternal(spt,gSpriteSheets[sheet],posX,posY);\n        }\n    }\n    return null;\n}\n\n//-----------------------------------------\n// External-facing function for drawing sprites based\n// on the sprite object stored in the 'sprites Array,\n// the 'SpriteSheetClass' object stored in the\n// 'gSpriteSheets' dictionary, and the position on\n// canvas to draw to.\nfunction __drawSpriteInternal(spt, sheet, posX, posY) {\n    // First, check if the sprite or sheet objects are\n    // null.\n    //\n    // YOUR CODE HERE\n    if(spt == null || sheet == null){\n        return null;\n    }\n    \n    \n    // Call the drawImage method of our canvas context\n    // using the full drawImage API. drawImage takes,\n    // in order:\n    //\n    // 1) the Image object to draw, this is our entire\n    //    spritesheet.\n    //\n    // 2) the x-coordinate we are drawing from in the\n    //    spritesheet.\n    //\n    // 3) the y-coordinate we are drawing from in the\n    //    spritesheet.\n    //\n    // 4) the width of the sprite we are drawing from\n    //    our spritesheet.\n    //\n    // 5) the height of the sprite we are drawing from\n    //    our spritesheet.\n    //\n    // 6) the x-coordinate we are drawing to in our\n    //    canvas.\n    //\n    // 7) the y-coordinate we are drawing to in our\n    //    canvas.\n    //\n    // 8) the width we are drawing in our canvas. This\n    //    is in case we want to scale the image we are\n    //    drawing to the canvas. In our case, we don't.\n    //\n    // 9) the height we are drawing in our canvas. This\n    //    is in case we want to scale the image we are\n    //    drawing to the canvas. In our case, we don't.\n    //\n    // Wow, that's a lot of parameters. Luckily, most\n    // of them are stored directly in the sprite object\n    // we want to draw.\n    //\n    // YOUR CODE HERE\n    var canvas = document.getElementById(\"gameCanvas\");\n    var context = canvas.getContext('2d');\n    console.log(posX,posY);\n    context.drawImage(sheet.img,\n                      spt.x, spt.y,\n                      spt.w, spt.h,\n                      posX + spt.cx, posY + spt.cy,\n                      spt.w, spt.h);\n    \n    \n}\n",
+			"file": "Week Two/spritesheet2.js",
+			"file_size": 7489,
+			"file_write_time": 130055339146680356,
 			"settings":
 			{
-				"buffer_size": 1122,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "image animation.html",
-			"settings":
-			{
-				"buffer_size": 1909,
+				"buffer_size": 7265,
 				"line_ending": "Windows"
 			}
 		}
@@ -279,6 +275,16 @@
 	},
 	"file_history":
 	[
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/Week Two/json_parse_example.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/Week Two/spritesheet.js",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/Week Two/quiz1.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/dom_manipulation.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/javascript inheritence.js",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/canvas_context.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/image object.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/image animation.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/Week One/image animation.html",
+		"/J/Users/Todd/Projects/HTML5/Game Development Class/HTML5 Game Dev.sublime-project",
 		"/J/Users/Todd/Projects/ZigBee/XBeeFramework.sublime-project",
 		"/C/Users/Todd/read_temperatures.py",
 		"/J/Users/Todd/Projects/HTML5/Modernizr.html",
@@ -428,56 +434,56 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "dom_manipulation.html",
+					"file": "Week Two/core.js",
 					"settings":
 					{
-						"buffer_size": 555,
+						"buffer_size": 5336,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								473,
-								473
+								329,
+								329
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3186.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "javascript inheritence.js",
+					"file": "Week Two/grits_effects.json",
 					"settings":
 					{
-						"buffer_size": 386,
+						"buffer_size": 988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								862,
+								862
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -489,82 +495,56 @@
 				},
 				{
 					"buffer": 2,
-					"file": "canvas_context.html",
+					"file": "spritesheet3.js",
 					"settings":
 					{
-						"buffer_size": 350,
+						"buffer_size": 8771,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								332,
-								332
+								783,
+								783
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1998.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "image object.html",
+					"file": "Week Two/spritesheet2.js",
 					"settings":
 					{
-						"buffer_size": 1122,
+						"buffer_size": 7265,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								106,
-								106
+								7265,
+								7265
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "image animation.html",
-					"settings":
-					{
-						"buffer_size": 1909,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1634,
-								1634
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 1456.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
